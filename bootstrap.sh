@@ -3,7 +3,7 @@ set -eux
 
 cd "$(dirname "${BASH_SOURCE}")";
 
-git pull origin main;
+#git pull origin main;
 
 function doIt() {
 	rsync --exclude ".git" \
