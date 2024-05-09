@@ -1,0 +1,40 @@
+[alias]
+	# View abbreviated SHA, description, and histroy graph of the latest 20 commits.
+	l = log --pretty=oneline -n 20 --graph --abbrev-commit
+
+	# View the current working tree status using the short format
+	s = status -s
+
+	# Pull in remote changes for the current repository and all its submodules.
+	p = pull --recurse-submodules
+
+[core]
+	excludesfile = ~/.gitignore
+	attributesfile = ~/.gitattributes
+
+[color]
+	# Use colors in Git commands that are capable of colored output when
+	# outputting to the terminal.
+	ui = auto
+
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red
+	new = green
+
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[user]
+	name = pancheng
+	email = pancheng@hisense.com
+
+
