@@ -5,6 +5,9 @@
 	# View the current working tree status using the short format
 	s = status -s
 
+	# View the difference of the current working tree
+	d = diff
+
 	# Pull in remote changes for the current repository and all its submodules.
 	p = pull --recurse-submodules
 

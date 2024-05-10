@@ -10,7 +10,13 @@ function doIt() {
 		--exclude "bootstrap.sh" \
 		--exclude "README.md" \
 		-avh --no-perms . ~;
-	source ~/.bash_profile;
+	if [[ $SHELL = *"bash" ]]; then
+		source ~/.bash_profile;
+	elif [[ $SHELL = *"zsh" ]]; then
+		source ~/.zshrc
+	else
+		echo "Currently, only bash and zsh configurations are supported"
+	fi
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
