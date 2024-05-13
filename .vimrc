@@ -47,7 +47,11 @@ syntax on
 " Highlight current line
 set cursorline
 " Make tabs as wide as two spaces
+set expandtab
+set smarttab
 set tabstop=4
+set shiftwidth=4
+
 " Show "invisible" characters
 "set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
 "set list
@@ -55,10 +59,13 @@ set tabstop=4
 set hlsearch
 " Ignore case of searches
 set ignorecase
+" When searching try to be smart about cases
+set smartcase
 " Highlight dynamically as pattern is typed
 set incsearch
 " Always show status line
 set laststatus=2
+set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
 " Enable mouse in all modes
 set mouse=a
 " Disable error bells
@@ -75,6 +82,23 @@ set showmode
 set title
 " Show the (partial) command as it's being typed
 set showcmd
+
+noremap <space> /
+" Smart way to move between windows
+noremap <C-j> <C-W>j
+noremap <C-k> <C-W>k
+noremap <C-h> <C-W>h
+noremap <C-l> <C-W>l
+
+" Close the current buffer
+noremap <leader>bd :Bclose<cr>:tabclose<cr>gT
+
+" Close all the buffers
+noremap <leader>ba :bufdo bd<cr>
+
+noremap <leader>l :bnext<cr>
+noremap <leader>h :bprevious<cr>
+
 " Use relative line numbers
 "if exists("&relativenumber")
 "	set relativenumber
@@ -93,6 +117,9 @@ endfunction
 noremap <leader>ss :call StripWhitespace()<CR>
 " Save a file as root (,W)
 noremap <leader>W :w !sudo tee % > /dev/null<CR>
+" Fast saving
+noremap <leader>w :w!<cr>
+
 " Automatic commands
 if has("autocmd")
 	" Enable file type detection
@@ -102,3 +129,14 @@ if has("autocmd")
 	" Treat .md files as Markdown
 	autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Helper functions
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Returns true if paste mode is enabled
+function! HasPaste()
+    if &paste
+        return 'PASTE MODE  '
+    endif
+    return ''
+endfunction
