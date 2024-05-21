@@ -119,6 +119,8 @@ noremap <leader>ss :call StripWhitespace()<CR>
 noremap <leader>W :w !sudo tee % > /dev/null<CR>
 " Fast saving
 noremap <leader>w :w!<cr>
+" Fast quit
+noremap <leader>q :q!<cr>
 
 " Automatic commands
 if has("autocmd")
