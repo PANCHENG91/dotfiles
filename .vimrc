@@ -52,6 +52,12 @@ set smarttab
 set tabstop=4
 set shiftwidth=4
 
+" Smart indent
+set si
+set ai
+set wrap
+set cindent
+
 " Show "invisible" characters
 "set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
 "set list
@@ -121,6 +127,7 @@ noremap <leader>W :w !sudo tee % > /dev/null<CR>
 noremap <leader>w :w!<cr>
 " Fast quit
 noremap <leader>q :q!<cr>
+noremap <leader>wq :wq!<cr>
 
 " Automatic commands
 if has("autocmd")
