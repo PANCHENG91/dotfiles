@@ -12,6 +12,9 @@ function doIt() {
 		-avh --no-perms . ~;
 	if [[ $SHELL = *"bash" ]]; then
 		source ~/.bash_profile;
+        if command -v ~/miniconda3/bin/conda &> /dev/null;then
+            ~/miniconda3/bin/conda init
+        fi
 	elif [[ $SHELL = *"zsh" ]]; then
 		source ~/.zshrc
 	else
