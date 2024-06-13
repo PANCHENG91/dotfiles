@@ -10,6 +10,14 @@ function doIt() {
 		--exclude "bootstrap.sh" \
 		--exclude "README.md" \
 		-avh --no-perms . ~;
+
+    if [[ $(uname -s) = Darwin ]]; then
+        rm -rf ~/soft_pc/macos/nvim-macos-arm64
+        xattr -c ~/soft_pc/macos/nvim-macos-arm64.tar.gz
+        tar zxf ~/soft_pc/macos/nvim-macos-arm64.tar.gz -C ~/soft_pc/macos/
+    elif [[ $(uname -s) = Linux ]]; then
+        echo "this is linux os"
+    fi
 	if [[ $SHELL = *"bash" ]]; then
 		source ~/.bash_profile;
         if command -v ~/miniconda3/bin/conda &> /dev/null;then
