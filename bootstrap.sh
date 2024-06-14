@@ -17,7 +17,7 @@ function doIt() {
         tar zxf ~/soft_pc/macos/nvim-macos-arm64.tar.gz -C ~/soft_pc/macos/
     elif [[ $(uname -s) = Linux ]]; then
         rm -rf ~/soft_pc/linux/nvim-linux64
-        tar xzvf ~/soft_pc/linux/nvim-linux64.tar.gz -C ~/soft_pc/linux/
+        tar xzf ~/soft_pc/linux/nvim-linux64.tar.gz -C ~/soft_pc/linux/
     fi
 	if [[ $SHELL = *"bash" ]]; then
 		source ~/.bash_profile;
