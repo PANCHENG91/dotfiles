@@ -9,6 +9,7 @@ function doIt() {
 	rsync --exclude ".git" \
 		--exclude "bootstrap.sh" \
 		--exclude "README.md" \
+        --exclude "soft_pc/config" \
 		-avh --no-perms . ~;
 
     if [[ $(uname -s) = Darwin ]]; then
@@ -29,6 +30,13 @@ function doIt() {
 	else
 		echo "Currently, only bash and zsh configurations are supported"
 	fi
+# config soft
+    if command -v ~/soft_pc/linux/nvim-linux64/bin/nvim &> /dev/null;then
+        rm -rf ~/.config/nvim
+        rm -rf ~/.local/share/nvim
+        cp -r ~/dotfiles/soft_pc/config/nvim ~/.config/nvim
+    fi
+    
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
