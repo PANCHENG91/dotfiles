@@ -1,0 +1,3 @@
+[submodule "soft_pc/config/nvim"]
+	path = soft_pc/config/nvim
+	url = https://github.com/LazyVim/starter
