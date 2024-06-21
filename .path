@@ -1,15 +1,27 @@
 if command -v $HOME/soft_pc/linux/nvim-linux64/bin/nvim &> /dev/null;then
   export PATH="$HOME/soft_pc/linux/nvim-linux64/bin/:$PATH";
 fi
+if command -v $HOME/soft_pc/macos/nvim-macos-arm64/bin/nvim &> /dev/null;then
+  export PATH="$HOME/soft_pc/macos/nvim-macos-arm64/bin/:$PATH";
+fi
 
 if command -v $HOME/soft_pc/linux/lazygit/lazygit &> /dev/null;then
   export PATH="$HOME/soft_pc/linux/lazygit/:$PATH";
+fi
+if command -v $HOME/soft_pc/macos/lazygit/lazygit &> /dev/null;then
+  export PATH="$HOME/soft_pc/macos/lazygit/:$PATH";
 fi
 
 if command -v $HOME/soft_pc/linux/fd-v10.1.0-x86_64-unknown-linux-gnu/fd &> /dev/null;then
   export PATH="$HOME/soft_pc/linux/fd-v10.1.0-x86_64-unknown-linux-gnu/:$PATH";
 fi
+if command -v $HOME/soft_pc/macos/fd-v10.1.0-aarch64-apple-darwin/fd &> /dev/null;then
+  export PATH="$HOME/soft_pc/macos/fd-v10.1.0-aarch64-apple-darwin/:$PATH";
+fi
 
 if command -v $HOME/soft_pc/linux/ripgrep-14.1.0-x86_64-unknown-linux-musl/rg &> /dev/null;then
   export PATH="$HOME/soft_pc/linux/ripgrep-14.1.0-x86_64-unknown-linux-musl/:$PATH";
+fi
+if command -v $HOME/soft_pc/macos/ripgrep-14.1.0-aarch64-apple-darwin/rg &> /dev/null;then
+  export PATH="$HOME/soft_pc/macos/ripgrep-14.1.0-aarch64-apple-darwin/:$PATH";
 fi
