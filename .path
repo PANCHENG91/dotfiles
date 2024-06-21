@@ -5,3 +5,7 @@ fi
 if command -v ~/soft_pc/linux/lazygit/lazygit &> /dev/null;then
     export PATH="~/soft_pc/linux/lazygit/:$PATH";
 fi
+
+if command -v ~/soft_pc/linux/fd-v10.1.0-x86_64-unknown-linux-gnu/fd &> /dev/null;then
+    export PATH="~/soft_pc/linux/fd-v10.1.0-x86_64-unknown-linux-gnu/:$PATH";
+fi

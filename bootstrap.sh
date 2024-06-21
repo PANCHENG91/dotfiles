@@ -18,7 +18,8 @@ function doIt() {
 		tar zxf ~/soft_pc/macos/nvim-macos-arm64.tar.gz -C ~/soft_pc/macos/
 	elif [[ $(uname -s) = Linux ]]; then
 		rm -rf ~/soft_pc/linux/nvim-linux64 && tar xzf ~/soft_pc/linux/nvim-linux64.tar.gz -C ~/soft_pc/linux/ && rm ~/soft_pc/linux/nvim-linux64.tar.gz
-		mkdir -p ~/soft_pc/linux/lazygit && tar zxf ~/soft_pc/linux/lazygit_0.42.0_Linux_x86_64.tar.gz -C ~/soft_pc/linux/lazygit/ && rm ~/soft_pc/linux/lazygit_0.42.0_Linux_x86_64.tar.gz
+		rm -rf ~/soft_pc/linux/lazygit/ && mkdir -p ~/soft_pc/linux/lazygit && tar zxf ~/soft_pc/linux/lazygit_0.42.0_Linux_x86_64.tar.gz -C ~/soft_pc/linux/lazygit/ && rm ~/soft_pc/linux/lazygit_0.42.0_Linux_x86_64.tar.gz
+		rm -rf ~/soft_pc/linux/fd-v10.1.0-x86_64-unknown-linux-gnu && tar zxf ~/soft_pc/linux/fd-v10.1.0-x86_64-unknown-linux-gnu.tar.gz -C ~/soft_pc/linux/ && rm ~/soft_pc/linux/fd-v10.1.0-x86_64-unknown-linux-gnu.tar.gz
 	fi
 
 	if [[ $SHELL = *"bash" ]]; then
