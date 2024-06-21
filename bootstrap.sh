@@ -20,6 +20,7 @@ function doIt() {
 		rm -rf ~/soft_pc/linux/nvim-linux64 && tar xzf ~/soft_pc/linux/nvim-linux64.tar.gz -C ~/soft_pc/linux/ && rm ~/soft_pc/linux/nvim-linux64.tar.gz
 		rm -rf ~/soft_pc/linux/lazygit/ && mkdir -p ~/soft_pc/linux/lazygit && tar zxf ~/soft_pc/linux/lazygit_0.42.0_Linux_x86_64.tar.gz -C ~/soft_pc/linux/lazygit/ && rm ~/soft_pc/linux/lazygit_0.42.0_Linux_x86_64.tar.gz
 		rm -rf ~/soft_pc/linux/fd-v10.1.0-x86_64-unknown-linux-gnu && tar zxf ~/soft_pc/linux/fd-v10.1.0-x86_64-unknown-linux-gnu.tar.gz -C ~/soft_pc/linux/ && rm ~/soft_pc/linux/fd-v10.1.0-x86_64-unknown-linux-gnu.tar.gz
+		rm -rf ~/soft_pc/linux/ripgrep-14.1.0-x86_64-unknown-linux-musl && tar zxf ~/soft_pc/linux/ripgrep-14.1.0-x86_64-unknown-linux-musl.tar.gz -C ~/soft_pc/linux/ && rm ~/soft_pc/linux/ripgrep-14.1.0-x86_64-unknown-linux-musl.tar.gz
 	fi
 
 	if [[ $SHELL = *"bash" ]]; then
@@ -34,10 +35,10 @@ function doIt() {
 	fi
 
 	# config soft
-	# if command -v ~/soft_pc/linux/nvim-linux64/bin/nvim &> /dev/null;then
-	#     rm -rf ~/.config/nvim
-	#     rm -rf ~/.local/share/nvim
-	#     cp -r ~/dotfiles/soft_pc/config/nvim ~/.config/nvim
+	# if command -v ~/soft_pc/linux/nvim-linux64/bin/nvim &>/dev/null; then
+	# 	rm -rf ~/.config/nvim
+	# 	rm -rf ~/.local/share/nvim
+	# 	cp -r ~/dotfiles/soft_pc/config/nvim ~/.config/nvim
 	# fi
 
 }
