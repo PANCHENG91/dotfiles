@@ -25,3 +25,8 @@ fi
 if command -v $HOME/soft_pc/macos/ripgrep-14.1.0-aarch64-apple-darwin/rg &> /dev/null;then
   export PATH="$HOME/soft_pc/macos/ripgrep-14.1.0-aarch64-apple-darwin/:$PATH";
 fi
+
+if command -v /opt/homebrew/Cellar/riscv-gnu-toolchain/main/bin/riscv64-unknown-elf-addr2line &> /dev/null;then
+  export PATH="/opt/homebrew/Cellar/riscv-gnu-toolchain/main/bin/:$PATH";
+fi
+
