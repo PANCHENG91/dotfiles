@@ -47,6 +47,11 @@ function doIt() {
 	# 	rm -rf ~/.local/share/nvim
 	# 	cp -r ~/dotfiles/soft_pc/config/nvim ~/.config/nvim
 	# fi
+	# if command -v ~/soft_pc/macos/nvim-macos-arm64/bin/nvim &>/dev/null; then
+	#  	rm -rf ~/.config/nvim
+	#  	rm -rf ~/.local/share/nvim
+	#  	cp -r ./soft_pc/config/nvim/ ~/.config/nvim
+	# fi
 
 }
 
