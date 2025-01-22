@@ -30,6 +30,7 @@ function doIt() {
       rm ~/soft_pc/linux/fd-v10.1.0-x86_64-unknown-linux-gnu.tar.gz
     rm -rf ~/soft_pc/linux/ripgrep-14.1.0-x86_64-unknown-linux-musl && tar zxf ~/soft_pc/linux/ripgrep-14.1.0-x86_64-unknown-linux-musl.tar.gz -C ~/soft_pc/linux/ &&
       rm ~/soft_pc/linux/ripgrep-14.1.0-x86_64-unknown-linux-musl.tar.gz
+    rm -rf ~/soft_pc/linux/fzf && tar zxf ~/soft_pc/linux/fzf-0.57.0-linux_amd64.tar.gz -C ~/soft_pc/linux/ && rm -rf ~/soft_pc/linux/fzf-0.57.0-linux_amd64.tar.gz
   fi
 
   if [[ $SHELL = *"bash" ]]; then
