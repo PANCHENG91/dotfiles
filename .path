@@ -26,9 +26,9 @@ if command -v $HOME/soft_pc/macos/ripgrep-14.1.0-aarch64-apple-darwin/rg &> /dev
   export PATH="$HOME/soft_pc/macos/ripgrep-14.1.0-aarch64-apple-darwin/:$PATH";
 fi
 
-#if command -v $HOME/soft_pc/linux/ripgrep-14.1.0-x86_64-unknown-linux-musl/rg &> /dev/null;then
-#  export PATH="$HOME/soft_pc/linux/ripgrep-14.1.0-x86_64-unknown-linux-musl/:$PATH";
-#fi
+if command -v $HOME/soft_pc/linux/fzf &> /dev/null;then
+  export PATH="$HOME/soft_pc/linux/:$PATH";
+fi
 if command -v $HOME/soft_pc/macos/fzf &> /dev/null;then
   export PATH="$HOME/soft_pc/macos/:$PATH";
 fi
