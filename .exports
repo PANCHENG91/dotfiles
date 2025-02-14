@@ -17,3 +17,11 @@ export HISTCONTROL='ignoreboth';
 export LESS_TERMCAP_md="${yellow}";
 # Don’t clear the screen after quitting a manual page.
 export MANPAGER='less -X';
+
+if [[ "$SHELL" == *"bash"* ]]; then
+  eval "$(fzf --bash)"
+elif [[ "$SHELL" == *"zsh"* ]]; then
+  source <(fzf --zsh)
+else
+    echo "Using other shell: $SHELL"
+fi
