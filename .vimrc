@@ -1,3 +1,18 @@
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin()
+    Plug 'jiangmiao/auto-pairs'
+    Plug 'vim-airline/vim-airline'
+    Plug 'preservim/nerdtree'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'akinsho/bufferline.nvim', { 'tag': '*' }
+call plug#end()
+
+" ============================== basic =================================
 " Use the Solarized Dark theme
 set background=dark
 colorscheme solarized
@@ -20,7 +35,7 @@ set gdefault
 " Use UTF-8 without bom
 set encoding=utf-8 nobomb
 " Change mapleader
-let mapleader=","
+let mapleader=" "
 " Don't add empty newlines at the end of files
 set binary
 set noeol
@@ -89,7 +104,6 @@ set title
 " Show the (partial) command as it's being typed
 set showcmd
 
-noremap <space> /
 " Smart way to move between windows
 noremap <C-j> <C-W>j
 noremap <C-k> <C-W>k
@@ -149,3 +163,30 @@ function! HasPaste()
     endif
     return ''
 endfunction
+
+" ============================== plug =================================
+" ------------------------------ coc ---------------------------------
+" Use tab for trigger completion with characters ahead and navigate
+" NOTE: There's always complete item selected by default, you may want to enable
+" no select by `"suggest.noselect": true` in your configuration file
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config
+inoremap <silent><expr> <C-j>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<C-j>" :
+      \ coc#refresh()
+inoremap <expr><C-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-k>"
+
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" GoTo code navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" ------------------------------- nerdtree ----------------------------
+nnoremap <leader>e :NERDTreeToggle<CR>
+
