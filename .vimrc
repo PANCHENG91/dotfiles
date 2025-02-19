@@ -4,6 +4,8 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+
+
 call plug#begin()
     Plug 'jiangmiao/auto-pairs'
     Plug 'vim-airline/vim-airline'
@@ -190,3 +192,10 @@ nmap <silent> gr <Plug>(coc-references)
 " ------------------------------- nerdtree ----------------------------
 nnoremap <leader>e :NERDTreeToggle<CR>
 
+" ------------------------------- airline ----------------------------
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'default'
+" 下一个缓冲区
+nnoremap <S-h> :bn<CR>
+" 上一个缓冲区
+nnoremap <S-l> :bp<CR>
