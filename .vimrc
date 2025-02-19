@@ -166,6 +166,13 @@ function! HasPaste()
     return ''
 endfunction
 
+" =========================== inoremap ===============================
+inoremap jk <Esc>
+
+
+" =========================== useful tools ===========================
+nnoremap <silent> <leader>gg :!lazygit<CR>
+
 " ============================== plug =================================
 " ------------------------------ coc ---------------------------------
 " Use tab for trigger completion with characters ahead and navigate
@@ -191,6 +198,7 @@ nmap <silent> gr <Plug>(coc-references)
 
 " ------------------------------- nerdtree ----------------------------
 nnoremap <leader>e :NERDTreeToggle<CR>
+
 
 " ------------------------------- airline ----------------------------
 let g:airline#extensions#tabline#enabled = 1
