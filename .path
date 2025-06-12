@@ -1,5 +1,5 @@
-if command -v $HOME/soft_pc/linux/nvim-linux64/bin/nvim &> /dev/null;then
-  export PATH="$HOME/soft_pc/linux/nvim-linux64/bin/:$PATH";
+if command -v $HOME/soft_pc/linux/nvim-linux-x86_64/bin/nvim &> /dev/null;then
+  export PATH="$HOME/soft_pc/linux/nvim-linux-x86_64/bin/:$PATH";
 fi
 if command -v $HOME/soft_pc/macos/nvim-macos-arm64/bin/nvim &> /dev/null;then
   export PATH="$HOME/soft_pc/macos/nvim-macos-arm64/bin/:$PATH";
