@@ -51,7 +51,7 @@ function doIt() {
   fi
 
   # config soft
-  # if command -v ~/soft_pc/linux/nvim-linux64/bin/nvim &>/dev/null; then
+  # if command -v ~/soft_pc/linux/nvim-linux-x86_64/bin/nvim &>/dev/null; then
   # 	rm -rf ~/.config/nvim
   # 	rm -rf ~/.local/share/nvim
   # 	cp -r ~/dotfiles/soft_pc/config/nvim ~/.config/nvim
