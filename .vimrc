@@ -10,13 +10,14 @@ call plug#begin()
     Plug 'preservim/nerdtree'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension'  }
+	Plug 'joshdick/onedark.vim'
 call plug#end()
 
 " ============================== basic =================================
 " Use the Solarized Dark theme
 set background=dark
-colorscheme solarized
-let g:solarized_termtrans=1
+colorscheme onedark
+"let g:solarized_termtrans=1
 
 " Make vim more useful
 set nocompatible
