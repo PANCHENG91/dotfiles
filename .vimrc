@@ -10,6 +10,7 @@ call plug#begin()
     Plug 'preservim/nerdtree'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'joshdick/onedark.vim'
+	Plug 'junegunn/fzf'
     Plug 'junegunn/fzf.vim'
 call plug#end()
 
