@@ -9,8 +9,8 @@ call plug#begin()
     Plug 'vim-airline/vim-airline'
     Plug 'preservim/nerdtree'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension'  }
-	Plug 'joshdick/onedark.vim'
+    Plug 'joshdick/onedark.vim'
+    Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " ============================== basic =================================
@@ -55,7 +55,7 @@ set modeline
 set modelines=4
 " Enable per-directory .vimrc files and disable unsafe commands in them
 set exrc
-set secure
+set nosecure
 " Enable line numbers
 set number
 " Enable syntax highlighting
@@ -207,20 +207,19 @@ nnoremap <S-h> :bn<CR>
 " 上一个缓冲区
 nnoremap <S-l> :bp<CR>
 
-" ------------------------------- LeaderF ----------------------------
-let g:Lf_WindowPosition = 'popup'
-" don't show the help in normal mode
-let g:Lf_HideHelp = 1
-let g:Lf_UseCache = 0
-let g:Lf_UseVersionControlTool = 0
-let g:Lf_IgnoreCurrentBufferName = 1
-" popup mode
-let g:Lf_WindowPosition = 'popup'
-let g:Lf_StlSeparator = { 'left': "\ue0b0", 'right': "\ue0b2", 'font': "DejaVu Sans Mono for Powerline"  }
-let g:Lf_PreviewResult = {'Function': 0, 'BufTag': 0 }
-let g:Lf_ShortcutF = "<leader>ff"
-noremap <leader>fb :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
-noremap <leader>fm :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
-noremap <leader>ft :<C-U><C-R>=printf("Leaderf bufTag %s", "")<CR><CR>
-noremap <leader>fl :<C-U><C-R>=printf("Leaderf line %s", "")<CR><CR>
-xnoremap gf :<C-U><C-R>=printf("Leaderf! rg -F -e %s ", leaderf#Rg#visual())<CR>
+" ------------------------------- fzf ----------------------------
+" 1. 窗口布局（底部 40%）
+let g:fzf_layout = { 'down': '40%' }
+
+" 2. 预览窗口（右侧 50%，Ctrl-/ 开关）
+let g:fzf_preview_window = ['right:50%', 'ctrl-/']
+
+" 3. 打开方式：Ctrl-x 横向分屏、Ctrl-v 垂直分屏
+let g:fzf_action = {
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit'
+\ }
+nnoremap <leader>ff :Files<CR>
+nnoremap <leader>fb :Buffers<CR>
+nnoremap <leader>fh :History<CR>
+nnoremap <leader>fg :Rg<CR>
